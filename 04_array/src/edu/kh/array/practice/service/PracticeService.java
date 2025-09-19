@@ -247,4 +247,6 @@ public class PracticeService {
 		        System.out.print(result[i] + " ");
 		    }
 		}
+	
+	
 }
