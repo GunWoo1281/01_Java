@@ -248,5 +248,39 @@ public class PracticeService {
 		    }
 		}
 	
+	public void practice13() {
+		System.out.print("문자열 : ");
+        String input = sc.nextLine();
+
+        char[] uniqueChars = new char[input.length()];
+        int count = 0;
+
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+            boolean exists = false;
+
+            for (int j = 0; j < count; j++) {
+                if (uniqueChars[j] == ch) {
+                    exists = true;
+                    break;
+                }
+            }
+
+            if (!exists) {
+                uniqueChars[count] = ch;
+                count++;
+            }
+        }
+
+        System.out.print("문자열에 있는 문자 : ");
+        for (int i = 0; i < count; i++) {
+            System.out.print(uniqueChars[i]);
+            if (i != count - 1) {
+                System.out.print(", ");
+            }
+        }
+
+        System.out.println("\n문자 개수 : " + count);
+	}
 	
 }
