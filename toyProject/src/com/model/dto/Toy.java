@@ -1,5 +1,6 @@
 package com.model.dto;
 
+import java.util.Objects;
 import java.util.Set;
 
 public class Toy {
@@ -81,6 +82,25 @@ public class Toy {
 	public String usedIngredients_print() {
 		String result = String.join(", ", usedIngredients);
 		return result;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(age, color, createDate, name, price, usedIngredients);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Toy other = (Toy) obj;
+		return age == other.age && Objects.equals(color, other.color) && createDate == other.createDate
+				&& Objects.equals(name, other.name) && price == other.price
+				&& Objects.equals(usedIngredients, other.usedIngredients);
 	}
 	
 }
